@@ -1,0 +1,18 @@
+
+/_dist_/
+/_build_/
+/WingMenu/Assets/TextMesh Pro/
+/WingMenu/Assets/TextMesh Pro.meta
+/WingMenu/Assets/Plugins/
+/WingMenu/Assets/Plugins.meta
+/WingMenu/Assets/3rd/
+/WingMenu/Assets/3rd.meta
+/WingMenu/Library/
+/WingMenu/obj/
+/WingMenu/Logs/
+/WingMenu/Temp/
+/WingMenu/UserSettings/
+/WingMenu/*.sln
+/WingMenu/*.csproj
+/WingMenu/.vsconfig
+/.UNITY_HOME.env

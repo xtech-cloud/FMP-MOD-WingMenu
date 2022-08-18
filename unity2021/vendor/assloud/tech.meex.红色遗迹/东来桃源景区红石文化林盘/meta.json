@@ -1,0 +1,13 @@
+{
+    "alias": "东来桃源景区红石文化林盘",
+    "caption": "成都东部新区",
+    "description": "",
+    "format": "v3",
+    "kv": {
+        "MapPOI": "mappoi.json"
+    },
+    "label": "景区",
+    "title": "东来桃源景区红石文化林盘",
+    "topic": "简介",
+    "uri": "tech.meex.红色遗迹/东来桃源景区红石文化林盘"
+}

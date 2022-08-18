@@ -1,0 +1,13 @@
+{
+    "alias": "秉彝亭",
+    "caption": "彭州市",
+    "description": "",
+    "format": "v3",
+    "kv": {
+        "MapPOI": "mappoi.json"
+    },
+    "label": "亭",
+    "title": "秉彝亭",
+    "topic": "简介",
+    "uri": "tech.meex.红色遗迹/秉彝亭"
+}

@@ -1,0 +1,7 @@
+generate:
+  active: true
+  org_name: XTC
+  module_name: WingMenu
+  database_driver: mongodb
+  debug: false
+  unity_solution: true
