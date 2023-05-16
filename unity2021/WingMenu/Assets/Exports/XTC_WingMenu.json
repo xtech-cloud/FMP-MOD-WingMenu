@@ -1,18 +1,43 @@
 {
-    "sectionS":[
-        {
-            "name":"",
-            "path": "/",
-            "instanceS": [
-                "default"
-            ],
-            "contentS": [
-                "XTC.WingMenu/+"
-            ],
-            "kvS": {
-                "key1":"value1",
-                "key2":"value2"
-            }
-        }
-    ]
+  "sectionS": [
+    {
+      "name": "测试1",
+      "path": "/Test1",
+      "instanceS": [
+        "default"
+      ],
+      "contentS": [
+      ],
+      "kvS": {
+        "mode": "edge",
+        "banner": "banner-1.png"
+      }
+    },
+    {
+      "name": "测试2",
+      "path": "/Test2",
+      "instanceS": [
+        "default"
+      ],
+      "contentS": [
+      ],
+      "kvS": {
+        "mode": "edge",
+        "banner": "banner-2.png"
+      }
+    },
+    {
+      "name": "测试3",
+      "path": "/Test3",
+      "instanceS": [
+        "default"
+      ],
+      "contentS": [
+      ],
+      "kvS": {
+        "mode": "middle",
+        "banner": "banner-3.png"
+      }
+    }
+  ]
 }
