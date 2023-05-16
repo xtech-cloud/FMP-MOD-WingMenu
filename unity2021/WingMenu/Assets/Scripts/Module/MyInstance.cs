@@ -16,21 +16,17 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
     public class MyInstance : MyInstanceBase
     {
 
-        public MyInstance(string _uid, string _style, MyConfig _config, LibMVCS.Logger _logger, Dictionary<string, LibMVCS.Any> _settings, MyEntryBase _entry, MonoBehaviour _mono, GameObject _rootAttachments)
-            : base(_uid, _style, _config, _logger, _settings, _entry, _mono, _rootAttachments)
-        {
-        }
-
-        /// <summary>
-        /// 应用样式
-        /// </summary>
-        public void ApplyStyle()
+        public MyInstance(string _uid, string _style, MyConfig _config, MyCatalog _catalog, LibMVCS.Logger _logger, Dictionary<string, LibMVCS.Any> _settings, MyEntryBase _entry, MonoBehaviour _mono, GameObject _rootAttachments)
+            : base(_uid, _style, _config, _catalog, _logger, _settings, _entry, _mono, _rootAttachments)
         {
         }
 
         /// <summary>
         /// 当被创建时
         /// </summary>
+        /// <remarks>
+        /// 可用于加载主题目录的数据
+        /// </remarks>
         public void HandleCreated()
         {
         }
@@ -45,9 +41,13 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
         /// <summary>
         /// 当被打开时
         /// </summary>
+        /// <remarks>
+        /// 可用于加载内容目录的数据
+        /// </remarks>
         public void HandleOpened(string _source, string _uri)
         {
             rootUI.gameObject.SetActive(true);
+            rootWorld.gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -56,6 +56,7 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
         public void HandleClosed()
         {
             rootUI.gameObject.SetActive(false);
+            rootWorld.gameObject.SetActive(false);
         }
     }
 }

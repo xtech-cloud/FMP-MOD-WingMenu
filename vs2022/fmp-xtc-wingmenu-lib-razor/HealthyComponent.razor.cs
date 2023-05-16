@@ -17,7 +17,7 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Razor
                 razor_ = _razor;
             }
 
-            public void Alert(string _code, string _message, SynchronizationContext? _context)
+            public void Alert(string _code, string _message, object? _context)
             {
                 if (null == razor_.messageService_)
                     return;
@@ -28,7 +28,7 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Razor
             }
 
 
-            public void RefreshEcho(IDTO _dto, SynchronizationContext? _context)
+            public void RefreshEcho(IDTO _dto, object? _context)
             {
                 var dto = _dto as HealthyEchoResponseDTO;
                 razor_.__debugEcho = dto?.Value.ToString();

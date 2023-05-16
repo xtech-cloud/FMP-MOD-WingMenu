@@ -1,7 +1,16 @@
+org_name: XTC
+module_name: WingMenu
 generate:
   active: true
-  org_name: XTC
-  module_name: WingMenu
-  database_driver: mongodb
+  database_driver: none
   debug: false
   unity_solution: true
+publish:
+  active: true
+  environment: product
+  repository: grpc://localhost:18000
+deploy:
+  active: true
+  environment: product
+  repository: grpc://localhost:18000
+  agent_port: 28000

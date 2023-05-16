@@ -15,4 +15,5 @@
 /WingMenu/*.sln
 /WingMenu/*.csproj
 /WingMenu/.vsconfig
+/WingMenu/.vs/
 /.UNITY_HOME.env
