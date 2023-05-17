@@ -16,6 +16,25 @@
   <GRPC address="https://localhost:19000"/>
   <!-- 样式列表
       name: 名称
+      MiddlePanel: 中间展开形状的菜单的面板
+      MiddlePanel.color: 面板颜色
+      MiddlePanel.decal: 面板的贴花的图片
+      EdgePanel: 两边展开形状的菜单的面板
+      MiddlePanel.color: 面板颜色
+      BundleCell: 资源包单元
+      ContentCell: 资源内容单元
+      EntryCell: 资源可执行入口
+      Filter: 过滤栏
+      Navigation.fontColor: 导览栏
+      ContentDetail.Title: 内容详情的主标题
+      ContentDetail.Label: 内容详情的标签
+      ContentDetail.Caption: 内容详情的副标签
+      ContentDetail.Topic: 内容详情的标语
+      ContentDetail.Description: 内容详情的简介
+      Entry.icon: 资源入口的图片
+      Entry.text: 资源入口的文字
+      Entry.kvKey: 资源入口的在meta中kvS的键，仅当对应的键在kvS中有值时，资源入口才会显示
+      Entry.SubjectS: 资源入口被点击后发布的主题列表
     -->
   <Styles>
     <Style name="default">
