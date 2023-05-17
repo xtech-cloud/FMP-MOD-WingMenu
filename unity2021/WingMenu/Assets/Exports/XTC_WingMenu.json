@@ -9,8 +9,38 @@
       "contentS": [
       ],
       "kvS": {
-        "mode": "edge",
-        "banner": "banner-1.png"
+        "shape": "edge",
+        "banner": "banner-1.png",
+        "pagination":"navigation"
+      }
+    },
+    {
+      "name": "1",
+      "path": "/Test1/1",
+      "instanceS": [
+        "default"
+      ],
+      "contentS": [
+          "2f0b906f-1861-4c49-a687-1784a14953c5/+",
+          "b359b77a-fb45-4845-8455-27f57ddaeed8/1dfbca4d-3376-4076-ab57-fde7020330f1"
+      ],
+      "kvS": {
+        "icon.source": "theme://",
+        "icon.uri": "icon-1.png"
+      }
+    },
+    {
+      "name": "2",
+      "path": "/Test1/2",
+      "instanceS": [
+        "default"
+      ],
+      "contentS": [
+          "b359b77a-fb45-4845-8455-27f57ddaeed8/+"
+      ],
+      "kvS": {
+        "icon.source": "assloud://",
+        "icon.uri": "2f0b906f-1861-4c49-a687-1784a14953c5/icon.png"
       }
     },
     {
@@ -22,8 +52,34 @@
       "contentS": [
       ],
       "kvS": {
-        "mode": "edge",
-        "banner": "banner-2.png"
+        "shape": "edge",
+        "banner": "banner-2.png",
+        "pagination":"filter"
+      }
+    },
+    {
+      "name": "3",
+      "path": "/Test2/3",
+      "instanceS": [
+        "default"
+      ],
+      "contentS": [
+          "2f0b906f-1861-4c49-a687-1784a14953c5/+",
+          "b359b77a-fb45-4845-8455-27f57ddaeed8/1dfbca4d-3376-4076-ab57-fde7020330f1"
+      ],
+      "kvS": {
+      }
+    },
+    {
+      "name": "4",
+      "path": "/Test2/4",
+      "instanceS": [
+        "default"
+      ],
+      "contentS": [
+          "b359b77a-fb45-4845-8455-27f57ddaeed8/+"
+      ],
+      "kvS": {
       }
     },
     {
@@ -35,8 +91,9 @@
       "contentS": [
       ],
       "kvS": {
-        "mode": "middle",
-        "banner": "banner-3.png"
+        "shape": "middle",
+        "banner": "banner-3.png",
+        "pagination":"filter"
       }
     }
   ]
