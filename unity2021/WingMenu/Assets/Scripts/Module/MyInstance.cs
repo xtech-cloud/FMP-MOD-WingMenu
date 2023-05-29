@@ -421,8 +421,16 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                     string resource_uri = string.Format("{0}/_resources/{1}", portalClone.activeContentMetaSchema.foreign_bundle_uuid, kvValue);
                     string content_uri = string.Format("{0}/{1}", portalClone.activeContentMetaSchema.foreign_bundle_uuid, portalClone.activeContentMetaSchema.Uuid);
                     Dictionary<string, object> variableS = new Dictionary<string, object>();
-                    variableS["{{resource_uri}}"] = resource_uri;
-                    variableS["{{content_uri}}"] = content_uri;
+                    foreach (var subject in entry.subjectS)
+                    {
+                        foreach (var parameter in subject.parameters)
+                        {
+                            if (parameter.type == "_")
+                            {
+                                variableS[parameter.key] = parameter.key.Replace("{{resource_uri}}", resource_uri).Replace("{{content_uri}}", content_uri);
+                            }
+                        }
+                    }
                     publishSubjects(entry.subjectS, variableS);
                 });
             }
