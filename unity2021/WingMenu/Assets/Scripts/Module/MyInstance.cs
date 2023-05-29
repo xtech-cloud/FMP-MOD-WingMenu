@@ -427,7 +427,8 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                         {
                             if (parameter.type == "_")
                             {
-                                variableS[parameter.key] = parameter.key.Replace("{{resource_uri}}", resource_uri).Replace("{{content_uri}}", content_uri);
+                                variableS[parameter.value] = parameter.value.Replace("{{resource_uri}}", resource_uri)
+                                .Replace("{{content_uri}}", content_uri).Replace("{{kvValue}}", kvValue);
                             }
                         }
                     }

@@ -71,7 +71,7 @@
               <Parameters>
                 <Parameter key="uid" value="default" type="string"/>
                 <Parameter key="source" value="assloud://" type="string"/>
-                <Parameter key="uri" value="{{resource_uri}}" type="string"/>
+                <Parameter key="uri" value="{{resource_uri}}" type="_"/>
                 <Parameter key="delay" value="1" type="float"/>
               </Parameters>
             </Subject>
@@ -83,7 +83,7 @@
               <Parameters>
                 <Parameter key="uid" value="default" type="string"/>
                 <Parameter key="source" value="assloud://" type="string"/>
-                <Parameter key="uri" value="{{resource_uri}}" type="string"/>
+                <Parameter key="uri" value="{{resource_uri}}" type="_"/>
                 <Parameter key="delay" value="1" type="float"/>
               </Parameters>
             </Subject>
