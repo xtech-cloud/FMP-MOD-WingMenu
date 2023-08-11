@@ -595,6 +595,12 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
             }
         }
 
+        private void hidePortalCover(GameObject _portalClone)
+        {
+            var imgCover = _portalClone.transform.Find("right/imgCover");
+            imgCover.gameObject.SetActive(false);
+        }
+
         private void createMenu(MyCatalog.Section _section)
         {
             logger_.Debug("create menu, path:{0}", _section.path);
@@ -772,6 +778,7 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                 clone.GetComponent<Button>().onClick.AddListener(() =>
                 {
                     refreshContentDetail(portalClone, uri, clone.transform.Find("imgIcon").GetComponent<RawImage>().texture);
+                    hidePortalCover(portalClone.root);
                 });
             }, () => { });
         }
