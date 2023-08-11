@@ -56,6 +56,7 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
         private Dictionary<int, List<GameObject>> pageMapS = new Dictionary<int, List<GameObject>>();
         // bundle的meta结构索引, key is bundleUuid
         private Dictionary<string, BundleMetaSchema> bundleSchemaS_ = new Dictionary<string, BundleMetaSchema>();
+        private Dictionary<string, Texture2D> portalCoverS_ = new Dictionary<string, Texture2D>();
 
         public MyInstance(string _uid, string _style, MyConfig _config, MyCatalog _catalog, LibMVCS.Logger _logger, Dictionary<string, LibMVCS.Any> _settings, MyEntryBase _entry, MonoBehaviour _mono, GameObject _rootAttachments)
             : base(_uid, _style, _config, _catalog, _logger, _settings, _entry, _mono, _rootAttachments)
@@ -351,6 +352,16 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                 return;
             }
 
+            string cover;
+            _section.kvS.TryGetValue("cover", out cover);
+            if (!string.IsNullOrEmpty(cover))
+            {
+                loadTextureFromTheme(cover, (_texture) =>
+                {
+                    portalCoverS_[_section.path] = _texture;
+                }, () => { });
+            }
+
             RectTransform template = null;
             if ("middle" == shape)
             {
@@ -445,7 +456,6 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
             portalClone.filterContainer.gameObject.SetActive(pagination == "filter");
             var filterAll = portalClone.filterContainer.Find("all").GetComponent<Toggle>();
 
-
             if ("edge" == shape)
             {
                 // 隐藏内容信息
@@ -483,6 +493,7 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                             obj.SetActive(false);
                         }
                         portalClone.btnNav.gameObject.SetActive(false);
+                        showPortalCover(_section.path, clone);
                     }
                     portalClone.panelContentDetail.gameObject.SetActive(false);
                 }
@@ -542,6 +553,7 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                 foreach (var obj in portalClone.menuS)
                 {
                     obj.SetActive(true);
+                    showPortalCover(_section.path, clone);
                 }
                 portalClone.btnNav.gameObject.SetActive(false);
                 portalClone.panelContentDetail.gameObject.SetActive(false);
@@ -557,6 +569,20 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                 }
                 portalClone.panelContentDetail.gameObject.SetActive(false);
             });
+        }
+
+        private void showPortalCover(string _sectionPath, GameObject _portalClone)
+        {
+            var imgCover = _portalClone.transform.Find("right/imgCover");
+            if (portalCoverS_.ContainsKey(_sectionPath))
+            {
+                imgCover.transform.GetComponent<RawImage>().texture = portalCoverS_[_sectionPath];
+                imgCover.gameObject.SetActive(true);
+            }
+            else
+            {
+                imgCover.gameObject.SetActive(false);
+            }
         }
 
         private void createMenu(MyCatalog.Section _section)
@@ -583,6 +609,15 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                 string iconUri;
                 if (!_section.kvS.TryGetValue("icon.uri", out iconUri))
                     iconUri = "";
+                string cover;
+                _section.kvS.TryGetValue("cover", out cover);
+                if (!string.IsNullOrEmpty(cover))
+                {
+                    loadTextureFromTheme(cover, (_texture) =>
+                    {
+                        portalCoverS_[_section.path] = _texture;
+                    }, () => { });
+                }
 
                 if (iconSource == "theme://")
                 {
@@ -608,6 +643,7 @@ namespace XTC.FMP.MOD.WingMenu.LIB.Unity
                 {
                     _portal.panelContentDetail.gameObject.SetActive(false);
                     refreshContents(clone.name);
+                    showPortalCover(_section.path, _portal.root);
                 });
             };
 

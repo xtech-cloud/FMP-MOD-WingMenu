@@ -11,7 +11,8 @@
       "kvS": {
         "shape": "edge",
         "banner": "banner-1.png",
-        "pagination":"navigation"
+        "pagination":"navigation",
+        "cover":"cover-1.png"
       }
     },
     {
@@ -26,7 +27,8 @@
       ],
       "kvS": {
         "icon.source": "theme://",
-        "icon.uri": "icon-1.png"
+        "icon.uri": "icon-1.png",
+        "cover":"cover-1-1.png"
       }
     },
     {
